@@ -6,14 +6,20 @@ export class LogInPage {
     constructor(page : Page)
     {
         this.page = page;
+        // this.EnterEmail = page.locator('//input[@data-qa="login-email"]')
     }
 
-    async goto() {
-        await this.page.goto('https://automationexercise.com/');
+    async verifyLogInToYourAccountIsVisible() {
+        await this.page.locator('//div[@class="login-form"]/h2');
     }
 
-    async verifyloginPage()
+    async enterNameAndEmail(email : string, password : string)
     {
-        await this.page.waitForSelector('')
+        await this.page.fill('input[data-qa="login-email"]',email);
+        await this.page.fill('input[data-qa="login-password"]',password);
+    }
+
+    async clickOnLogInButton(){
+        await this.page.click('')
     }
 }
