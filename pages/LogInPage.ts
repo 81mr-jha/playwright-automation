@@ -59,30 +59,5 @@ export class LogInPage {
         await expect(this.page).toHaveURL('https://automationexercise.com/test_cases');
     }
 
-    async clickOnProducts() 
-    {
-        await this.page.locator('//a[text()=" Products"]').click();
-    }
-
-    async verifyAllProductsPage() 
-    {
-        await expect(this.page).toHaveURL('https://automationexercise.com/products');
-    }
-
-    async verifyProductList() 
-    {
-        await expect(this.page.getByText('All Products')).toBeVisible();
-    }
-
-    async clickOnViewProduct() 
-    {
-        await this.page.locator('//div[@class="features_items"]/div[2]/div/div[2]/ul/li/a').click();
-    }
-
-    async verifyProductDetailPage()
-    {
-        await expect(this.page).toHaveURL('https://automationexercise.com/product_details/1');
-    }
-
     
 }
